@@ -1,0 +1,50 @@
+<h1>Routes</h1>
+<hr />
+<table style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="border-bottom: 1px solid #ccc;">
+      <th>Route</th>
+      <th>Description</th>
+      <th>URL</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td>/teams</td>
+      <td>GET teams</td>
+      <td><a href="http://localhost:3000/teams" target="_blank">http://localhost:3000/teams</a></td>
+      <td>
+        <button class="btn btn-primary" (click)="handleButtonClick('http://localhost:3000/teams')">Get</button>
+      </td>
+    </tr>
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td>/players</td>
+      <td>GET players</td>
+      <td><a href="http://localhost:3000/players" target="_blank">http://localhost:3000/players</a></td>
+      <td>
+        <button class="btn btn-primary" (click)="handleButtonClick('http://localhost:3000/players')">Get</button>
+      </td>
+    </tr>
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td>/results/</td>
+      <td>GET results</td>
+      <td><a href="http://localhost:3000/results" target="_blank">http://localhost:3000/results</a></td>
+      <td>
+        <button class="btn btn-primary" (click)="handleButtonClick('http://localhost:3000/results')">Get</button>
+      </td>
+    </tr>
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td>/results/1</td>
+      <td>GET results by division</td>
+      <td><a href="http://localhost:3000/results/1" target="_blank">http://localhost:3000/results/1</a></td>
+      <td>
+        <button class="btn btn-primary" (click)="handleButtonClick('http://localhost:3000/results/1')">Get</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h6>JSON data</h6>
+<textarea readonly [value]="jsonData" style="width: 1500px; height: 196px; resize: none; border: 1px solid #ccc; padding: 5px;"></textarea>
+<hr>

@@ -1,0 +1,26 @@
+<h2>Players</h2>
+<select class="form-select" id="teams"(change)="filterPlayers($event)">
+    <option value="All">All</option>
+<option *ngFor="let team of uniqueTeams()" [value]="team">{{ team }}</option>        
+    </select>
+<table class="table">
+    <thead>
+      <tr>
+        <th>Team</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Matches</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(player of players; track player.id){
+          <tr>
+              <td><img src="/assets/logos/{{player.teamName}}.png" alt="{{player.teamName}}" width="30" height="30">  {{ player.teamName }}</td>
+              <td>{{ player.playerName }} (#{{player.squadNumber}})</td>
+              <td>{{ player.age }}</td>
+              <td>{{ player.matches }}</td>
+          </tr>
+      }
+  </tbody>
+</table>
+

@@ -1,0 +1,28 @@
+<h2>Division 1</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Pos</th>
+      <th>Team</th>
+      <th>Pd</th>
+      <th>W</th>
+      <th>D</th>
+      <th>L</th>
+      <th>DIFF</th>
+      <th>Pts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let team of standings">
+      <td>{{ team.position }}</td>
+      <td>{{ team.team }}</td>
+      <td>{{ team.played }}</td>
+      <td>{{ team.wins }}</td>
+      <td>{{ team.draws }}</td>
+      <td>{{ team.losses }}</td>
+      <td>{{ team.scoresFor - team.scoresAgainst }}</td>
+      <td>{{ team.points }}</td>
+    </tr>
+  </tbody>
+</table>

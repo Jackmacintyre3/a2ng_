@@ -1,0 +1,39 @@
+<h2>Results</h2>
+<div class="d-flex align-items-center">
+  <button class="btn btn-primary mr-2" (click)="goToPreviousRound()"><< Round {{ getPreviousRound() }}</button>
+  <h4 class="mr-2">Round {{ getCurrentRound() }}</h4>
+  <button class="btn btn-primary" (click)="goToNextRound()">Round {{ getNextRound() }} >></button>
+</div>
+<hr>
+<div class="search-bar mt-3 d-flex align-items-center">
+  <span class="mr-2">Team:</span>
+  <input type="text" class="form-control" [(ngModel)]="searchTeam">
+</div>
+<hr>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Round</th>
+      <th>Team 1</th>
+      <th></th>
+      <th></th>
+      <th>Team 2</th>
+      <th>Division & Round</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let result of filteredResults">
+      <ng-container *ngIf="result.division.toString() === getCurrentRound()">
+        <td>{{ result.date }}</td>
+        <td>{{ result.division }}</td>
+        <td><img src="/assets/logos/{{result.team1}}.png" alt="{{result.team1}}" width="30" height="30">  {{ result.team1 }}</td>
+        <td>{{ result.team1Score }}</td>
+        <td>{{ result.team2Score }}</td>
+        <td><img src="/assets/logos/{{result.team2}}.png" alt="{{result.team2}}" width="30" height="30">  {{ result.team2 }}</td>
+        <td>D{{ result.division }} Rd</td>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,21 @@
+<h2>Stats</h2>
+<select class="form-select" id="teams" [(ngModel)]="selectedTeamId" (change)="onTeamSelect()">
+  <option value="0">Select a team...</option> 
+  @for(team of teams; track team.id) {
+    <option value="{{team.id}}">{{team.name}}</option>
+  } 
+</select>
+
+<hr/>
+
+<h2>{{ selectedTeamId !== '0' ? (selectedTeamName + ' Match Scores') : 'Team Match Scores' }}</h2>
+
+<div #scoresChart></div>
+
+<hr />
+
+<h2>{{ selectedTeamId !== '0' ? (selectedTeamName + ' Form') : 'Team Form' }}</h2>
+
+<div #formChart></div>
+
+<hr/>
